@@ -6,65 +6,108 @@ import {
   SafeAreaView,
   StyleSheet,
   TouchableOpacity,
-  Dimensions,
   TextInput,
+  ScrollView,
 } from 'react-native';
 
 // Components
-import Map from '../component/Map';
 
 // Dummy Data
-import {data} from '../dummuData/data';
+import {recentData, favData} from '../dummuData/data';
 
 // Icons
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
-import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
-import icoMoonConfig from '../assets/session.json';
-
-const {width, height} = Dimensions.get('window');
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Search = () => (
   <View style={styles.container}>
-    <SafeAreaView>
-      <View style={styles.card}>
-        <View style={styles.drop}>
-          <Text style={styles.dropText}>Drop Location</Text>
-          <TouchableOpacity>
-            <Feather name="x" size={24} />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.search}>
-          <View style={styles.inputWrapper}>
-            <View style={styles.pinkDot} />
-            <TextInput
-              placeholder="Where are you going"
-              placeholderTextColor="#afb1b6"
-            />
+    <ScrollView>
+      <SafeAreaView>
+        <View style={styles.card}>
+          <View style={styles.drop}>
+            <Text style={styles.dropText}>Drop Location</Text>
+            <TouchableOpacity>
+              <Feather name="x" size={24} />
+            </TouchableOpacity>
           </View>
+
+          <View style={styles.search}>
+            <View style={styles.inputWrapper}>
+              <View style={styles.pinkDot} />
+              <TextInput
+                placeholder="Where are you going"
+                placeholderTextColor="#afb1b6"
+              />
+            </View>
+            <View>
+              <Feather name="heart" size={20} />
+            </View>
+          </View>
+
+          <View style={styles.buttonCard}>
+            <View style={styles.buttonCardPin}>
+              <Fontisto
+                name="map-marker-alt"
+                size={20}
+                style={styles.buttonCardIcon}
+              />
+              <Text style={styles.buttonCardText}>
+                Tap to select from the map
+              </Text>
+            </View>
+            <TouchableOpacity style={styles.buttonCircle}>
+              <Feather name="arrow-right" size={20} color="#fff" />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </SafeAreaView>
+      <View style={styles.contentWrapper}>
+        <Text style={styles.bigTitle}>Favorites Places</Text>
+        <View style={{marginBottom: 20}}>
+          {favData.map((data) => {
+            return (
+              <View key={data.id} style={styles.favoriteWrapper}>
+                <View style={styles.favoriteIcon}>
+                  <View style={{marginTop: 5}}>
+                    <Fontisto
+                      name="heart"
+                      size={18}
+                      color="#04dca0"
+                      style={{marginRight: 10}}
+                    />
+                  </View>
+                  <View>
+                    <Text style={styles.favoriteTitle}>{data.title}</Text>
+                    <Text style={styles.favoriteSubtitle}>{data.subtitle}</Text>
+                  </View>
+                </View>
+                <View>
+                  <Feather name="minus-circle" size={24} color="#ff909a" />
+                </View>
+              </View>
+            );
+          })}
+        </View>
+        <View>
+          <Text style={styles.bigTitle}>Recent Visited Places</Text>
           <View>
-            <Feather name="heart" size={20} />
+            {recentData.map((data) => {
+              return (
+                <View key={data.id} style={styles.recentWrapper}>
+                  <MaterialCommunityIcons
+                    name="clock-time-five"
+                    size={24}
+                    style={{marginRight: 10, color: '#80828b'}}
+                  />
+                  <Text style={styles.recentText}>{data.title}</Text>
+                </View>
+              );
+            })}
           </View>
-        </View>
-
-        <View style={styles.buttonCard}>
-          <View style={styles.buttonCardPin}>
-            <Fontisto
-              name="map-marker-alt"
-              size={20}
-              style={styles.buttonCardIcon}
-            />
-            <Text style={styles.buttonCardText}>
-              Tap to select from the map
-            </Text>
-          </View>
-          <TouchableOpacity style={styles.buttonCircle}>
-            <Feather name="arrow-right" size={20} color="#fff" />
-          </TouchableOpacity>
         </View>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   </View>
 );
 
@@ -138,6 +181,44 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#000',
+  },
+  contentWrapper: {
+    paddingHorizontal: 20,
+    marginTop: 40,
+  },
+  bigTitle: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: '#404151',
+    marginBottom: 20,
+  },
+  favoriteWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  favoriteIcon: {
+    flexDirection: 'row',
+  },
+  favoriteTitle: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#555664',
+    marginBottom: 5,
+  },
+  favoriteSubtitle: {
+    color: '#a9abb0',
+  },
+  recentWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  recentText: {
+    fontWeight: 'bold',
+    fontSize: 14,
+    color: '#80828b',
   },
 });
 
