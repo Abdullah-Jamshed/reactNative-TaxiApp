@@ -11,8 +11,19 @@ import {
 // Components
 import Map from '../component/Map';
 
+// Dummy Data
+import {data} from '../dummuData/data';
+
 // Icons
 import Feather from 'react-native-vector-icons/Feather';
+import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
+import icoMoonConfig from '../assets/session.json';
+
+const CarIcon = createIconSetFromIcoMoon(
+  icoMoonConfig,
+  'icomoon',
+  'icomoon.ttf',
+);
 
 const Home = () => (
   <View style={styles.container}>
@@ -34,6 +45,16 @@ const Home = () => (
         </View>
       </TouchableOpacity>
     </SafeAreaView>
+    <View style={styles.categoryWrapper}>
+      {data.map((item) => {
+        return (
+          <View key={item.id} style={styles.category}>
+            <Text>{item.name}</Text>
+            <CarIcon name={item.icon} size={45} />
+          </View>
+        );
+      })}
+    </View>
   </View>
 );
 
@@ -55,7 +76,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 10,
     },
     shadowOpacity: 0.05,
     shadowRadius: 5,
@@ -77,6 +98,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  categoryWrapper: {},
+  category: {},
 });
 
 export default Home;

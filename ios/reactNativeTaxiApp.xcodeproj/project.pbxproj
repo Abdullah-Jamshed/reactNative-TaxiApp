@@ -32,6 +32,9 @@
 		9414661A23ED4D88A8EC1690 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED464B5F6D149B993532047 /* Octicons.ttf */; };
 		09FF4C1095624E0B957793E3 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6D1459545D44B23A179D2D1 /* SimpleLineIcons.ttf */; };
 		FBC3C981385E42BB825556D8 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3B6CE5907694A81B783A4EE /* Zocial.ttf */; };
+		5C56D8FEF3F94E6CA47CC023 /* icomoon.svg in Resources */ = {isa = PBXBuildFile; fileRef = F09DCC21DB93423991291B02 /* icomoon.svg */; };
+		E051B76CC9284C868A749C34 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A045961B1B884D208D41E7EA /* icomoon.ttf */; };
+		6306CD5CB13A4B19926D8FC4 /* icomoon.woff in Resources */ = {isa = PBXBuildFile; fileRef = 8FCB5D408C2D4C3B9DAAA4EF /* icomoon.woff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		6ED464B5F6D149B993532047 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A6D1459545D44B23A179D2D1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F3B6CE5907694A81B783A4EE /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F09DCC21DB93423991291B02 /* icomoon.svg */ = {isa = PBXFileReference; name = "icomoon.svg"; path = "../src/assets/fonts/icomoon.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A045961B1B884D208D41E7EA /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../src/assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8FCB5D408C2D4C3B9DAAA4EF /* icomoon.woff */ = {isa = PBXFileReference; name = "icomoon.woff"; path = "../src/assets/fonts/icomoon.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,9 @@
 				6ED464B5F6D149B993532047 /* Octicons.ttf */,
 				A6D1459545D44B23A179D2D1 /* SimpleLineIcons.ttf */,
 				F3B6CE5907694A81B783A4EE /* Zocial.ttf */,
+				F09DCC21DB93423991291B02 /* icomoon.svg */,
+				A045961B1B884D208D41E7EA /* icomoon.ttf */,
+				8FCB5D408C2D4C3B9DAAA4EF /* icomoon.woff */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -368,6 +377,9 @@
 				9414661A23ED4D88A8EC1690 /* Octicons.ttf in Resources */,
 				09FF4C1095624E0B957793E3 /* SimpleLineIcons.ttf in Resources */,
 				FBC3C981385E42BB825556D8 /* Zocial.ttf in Resources */,
+				5C56D8FEF3F94E6CA47CC023 /* icomoon.svg in Resources */,
+				E051B76CC9284C868A749C34 /* icomoon.ttf in Resources */,
+				6306CD5CB13A4B19926D8FC4 /* icomoon.woff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
