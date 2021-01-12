@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   StyleSheet,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 
 // Components
@@ -19,11 +20,13 @@ import Feather from 'react-native-vector-icons/Feather';
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from '../assets/session.json';
 
-const CarIcon = createIconSetFromIcoMoon(
+const CustomIcon = createIconSetFromIcoMoon(
   icoMoonConfig,
   'icomoon',
   'icomoon.ttf',
 );
+
+const {width, height} = Dimensions.get('window');
 
 const Home = () => (
   <View style={styles.container}>
@@ -49,11 +52,22 @@ const Home = () => (
       {data.map((item) => {
         return (
           <View key={item.id} style={styles.category}>
-            <Text>{item.name}</Text>
-            <CarIcon name={item.icon} size={45} />
+            <Text style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}>
+              {item.name}
+            </Text>
+            <CustomIcon
+              style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}
+              name={item.icon}
+              size={45}
+            />
           </View>
         );
       })}
+    </View>
+    <View style={styles.buttonWrapper}>
+      <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+        <Text style={styles.buttonText}>PickMe Here</Text>
+      </TouchableOpacity>
     </View>
   </View>
 );
@@ -98,8 +112,45 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  categoryWrapper: {},
-  category: {},
+  categoryWrapper: {
+    alignItems: 'flex-end',
+    backgroundColor: '#fff',
+    padding: 20,
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 20,
+    position: 'absolute',
+    right: 0,
+    top: height / 4,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 2,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 20,
+
+    elevation: 3,
+  },
+  category: {
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  buttonWrapper: {
+    position: 'absolute',
+    bottom: 50,
+    alignSelf: 'center',
+  },
+  button: {
+    backgroundColor: '#000',
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    opacity:1
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
 });
 
 export default Home;
