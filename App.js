@@ -2,11 +2,13 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import Home from './src/screens/Home';
+import Search from './src/screens/Search';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Home />
+      {/* <Home /> */}
+      <Search />
     </View>
   );
 };

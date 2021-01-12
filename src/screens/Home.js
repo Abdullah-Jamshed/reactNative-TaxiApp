@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 5,
-    opacity:1
+    opacity: 1,
   },
   buttonText: {
     color: '#fff',
