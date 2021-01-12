@@ -70,7 +70,6 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     flex: 1,
   },
-  pin: {},
   navigatorPin: {
     width: 40,
     height: 40,

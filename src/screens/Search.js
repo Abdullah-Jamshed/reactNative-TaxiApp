@@ -6,11 +6,13 @@ import {
   SafeAreaView,
   StyleSheet,
   TouchableOpacity,
+  Dimensions,
   TextInput,
   ScrollView,
 } from 'react-native';
 
 // Components
+import Map from '../component/Map';
 
 // Dummy Data
 import {recentData, favData} from '../dummuData/data';
@@ -19,6 +21,8 @@ import {recentData, favData} from '../dummuData/data';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+const {width, height} = Dimensions.get('window');
 
 const Search = () => (
   <View style={styles.container}>
@@ -172,7 +176,7 @@ const styles = StyleSheet.create({
   buttonCardText: {
     color: '#92939b',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: width < 361 ? 14 : 16,
   },
   buttonCircle: {
     width: 50,
@@ -209,6 +213,7 @@ const styles = StyleSheet.create({
   },
   favoriteSubtitle: {
     color: '#a9abb0',
+    fontSize: width < 361 ? 13 : 16,
   },
   recentWrapper: {
     flexDirection: 'row',

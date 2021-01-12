@@ -31,7 +31,6 @@ const {width, height} = Dimensions.get('window');
 const Home = () => (
   <View style={styles.container}>
     <Map />
-
     <SafeAreaView style={styles.safeContainer}>
       <View>
         <Feather name="menu" size={24} />
