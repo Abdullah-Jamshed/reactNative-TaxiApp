@@ -100,6 +100,13 @@ const Book = () => {
                 <Text style={styles.buttonText2}>Pay</Text>
               </TouchableOpacity>
             </View>
+            <View style={styles.bookButtonWrapper}>
+              <TouchableOpacity
+                style={styles.bookButton}
+                activeOpacity={0.9}>
+                <Text style={styles.bookButtonText}>Book Now</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         )}
       </View>
@@ -159,8 +166,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: width / 2,
   },
-//   buttonText1: {},
-//   buttonText2: {},
+  bookButtonWrapper: {
+    width,
+    backgroundColor: '#000',
+    // alignItems: 'center',
+    // paddingVertical: 20,
+  },
+  bookButton: {
+    width,
+    backgroundColor: '#000',
+    alignItems: 'center',
+    paddingVertical: 20,
+  },
+  bookButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
 
 export default Book;
