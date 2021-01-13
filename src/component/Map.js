@@ -4,7 +4,12 @@ import React, {useState} from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
 
 // Libraries Components
-import MapView, {PROVIDER_GOOGLE, Marker, Circle} from 'react-native-maps';
+import MapView, {
+  PROVIDER_GOOGLE,
+  Marker,
+  Circle,
+  MapViewDirections,
+} from 'react-native-maps';
 
 // Map style
 import mapStyle from '../styles';
@@ -16,7 +21,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const {width, height} = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
 
-const Map = () => {
+const Map = ({screenName}) => {
   const [radius, setRadius] = useState(60);
   return (
     <MapView
@@ -26,8 +31,8 @@ const Map = () => {
       provider={PROVIDER_GOOGLE}
       style={styles.absolute}
       initialRegion={{
-        latitude: 24.8659854,
-        longitude: 68.1799912,
+        latitude: 24.885204,
+        longitude: 67.169733,
         latitudeDelta: 0.01,
         longitudeDelta: 0.01 * ASPECT_RATIO,
       }}
@@ -35,8 +40,8 @@ const Map = () => {
       <Circle
         key="test"
         center={{
-          latitude: 24.8659854,
-          longitude: 68.1799912,
+          latitude: 24.885204,
+          longitude: 67.169733,
         }}
         radius={radius}
         strokeWidth={1}
@@ -45,22 +50,37 @@ const Map = () => {
       />
       <Marker
         coordinate={{
-          latitude: 24.8659854,
-          longitude: 68.1799912,
+          latitude: 24.885204,
+          longitude: 67.169733,
         }}>
         <View style={styles.pin}>
           <Fontisto name="map-marker-alt" size={30} color="#02dcf9" />
         </View>
       </Marker>
-      <Marker
-        coordinate={{
-          latitude: 24.862637,
-          longitude: 68.179755,
-        }}>
-        <View style={styles.navigatorPin}>
-          <Ionicons name="navigate" size={20} color="#fff" />
-        </View>
-      </Marker>
+      {/* <MapViewDirections
+        origin={{
+          latitude: -9.64561693,
+          longitude: -35.73592044,
+        }}
+        destination={{
+          latitude: -9.645601,
+          longitude: -35.734108,
+        }}
+        apikey={'AIzaSyBVFhY3cURPTbAoOnkyAeijkAt2kqRJ2iY'}
+        strokeWidth={3}
+        strokeColor="#333"
+      /> */}
+      {screenName === 'Home' && (
+        <Marker
+          coordinate={{
+            latitude: 24.862637,
+            longitude: 68.179755,
+          }}>
+          <View style={styles.navigatorPin}>
+            <Ionicons name="navigate" size={20} color="#fff" />
+          </View>
+        </Marker>
+      )}
     </MapView>
   );
 };

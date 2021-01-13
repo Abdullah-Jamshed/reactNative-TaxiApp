@@ -217,10 +217,67 @@ export default [
     stylers: [
       {
         // color: '#e9e9e9',
-        color:"#d4f1f9"
+        color: '#d4f1f9',
       },
       {
         lightness: 17,
+      },
+    ],
+  },
+  {
+    featureType: 'landscape.man_made',
+    elementType: 'geometry.fill',
+    stylers: [
+      {
+        color: '#f5f5f5',
+      },
+      {
+        visibility: 'on', // original structure
+        // visibility: 'simplified', // more clear road
+      },
+    ],
+  },
+  {
+    featureType: 'landscape.man_made',
+    elementType: 'geometry.stroke',
+    stylers: [
+      {
+        color: '#000',
+      },
+      {
+        visibility: 'on', // original structure
+        // visibility: 'simplified', // more clear road
+      },
+    ],
+  },
+
+  {
+    featureType: 'road.highway',
+    elementType: 'geometry.fill',
+    stylers: [
+      {
+        color: '#ffffff',
+      },
+    ],
+  },
+  {
+    featureType: 'road.highway',
+    elementType: 'geometry.stroke',
+    stylers: [
+      {
+        color: '#d6d6d6',
+      },
+    ],
+  },
+  {
+    featureType: 'road',
+    elementType: 'labels.text.fill',
+    stylers: [
+      {
+        color: '#000',
+      },
+      {
+        visibility: 'on',
       },
     ],
   },

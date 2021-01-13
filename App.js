@@ -3,14 +3,16 @@ import {StyleSheet, View} from 'react-native';
 
 import Home from './src/screens/Home';
 import Search from './src/screens/Search';
+import Book from './src/screens/Book';
 
 import MapView, {PROVIDER_GOOGLE, Marker, Circle} from 'react-native-maps';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Home />
+      {/* <Home /> */}
       {/* <Search /> */}
+      <Book />
     </View>
   );
 };

@@ -30,10 +30,10 @@ const {width, height} = Dimensions.get('window');
 
 const Home = () => (
   <View style={styles.container}>
-    <Map />
+    <Map screenName="Home" />
     <SafeAreaView style={styles.safeContainer}>
       <View>
-        <Feather name="menu" size={24} />
+        <Feather name="menu" size={24} style={{marginTop: 20}} />
       </View>
       <TouchableOpacity style={styles.search}>
         <View style={styles.inputWrapper}>
