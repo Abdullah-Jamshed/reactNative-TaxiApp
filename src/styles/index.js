@@ -104,7 +104,8 @@ export default [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#dedede',
+        // color: '#dedede',
+        color: '#d0edb4',
       },
       {
         lightness: 21,
@@ -215,7 +216,8 @@ export default [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#e9e9e9',
+        // color: '#e9e9e9',
+        color:"#d4f1f9"
       },
       {
         lightness: 17,
