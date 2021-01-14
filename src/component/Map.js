@@ -19,6 +19,7 @@ import MapViewDirections from 'react-native-maps-directions';
 import mapStyle from '../styles';
 
 // env Variable
+
 import {REACT_APP_API_KEY} from '@env'; // get your api key from google map platform
 
 // Icons
@@ -73,6 +74,7 @@ const Map = ({screenName}) => {
     locationPermission();
     geoLocation();
   }, []);
+
   return (
     <>
       <MapView
@@ -101,17 +103,6 @@ const Map = ({screenName}) => {
           <>
             {location && (
               <>
-                {/* <Circle
-                  key="test"
-                  center={{
-                    latitude: location.latitude,
-                    longitude: location.longitude,
-                  }}
-                  radius={30}
-                  strokeWidth={1}
-                  strokeColor={'rgb(2,220,159)'}
-                  fillColor={'rgba(2,220,159,.25)'}
-                /> */}
                 <Marker
                   coordinate={{
                     latitude: location.latitude,
@@ -261,7 +252,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 40,
     right: 20,
-    // alignSelf: 'center',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
