@@ -50,64 +50,60 @@ const Book = () => {
           <Ionicons name="grid" size={20} style={{color: '#fff'}} />
         </TouchableOpacity>
         {footer && (
-          <View>
-            <View style={styles.categoryWrapper}>
-              {data.map((item) => {
-                return (
-                  <View key={item.id} style={{alignItems: 'center'}}>
-                    <Text
-                      style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}>
-                      {item.name}
-                    </Text>
-                    <CustomIcon
-                      name={item.icon}
-                      size={40}
-                      style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}
-                    />
-                  </View>
-                );
-              })}
-            </View>
-            <View style={styles.footerDiscription}>
-              <Text style={styles.footerTitle}>PKR 800-920</Text>
-              <View style={{flexDirection: 'row'}}>
-                <Text style={{fontWeight: 'bold', color: '#868891'}}>
-                  Note:{' '}
-                </Text>
-                <View style={{width: (width * 80) / 100}}>
-                  <Text style={{color: '#868891'}}>
-                    This is an approximate estimate. Actual cost may be diffrent
-                    due to traffic and wating time
+        <View style={{zIndex: 2, elevation: 4}}>
+          <View style={styles.categoryWrapper}>
+            {data.map((item) => {
+              return (
+                <View key={item.id} style={{alignItems: 'center'}}>
+                  <Text
+                    style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}>
+                    {item.name}
                   </Text>
+                  <CustomIcon
+                    name={item.icon}
+                    size={40}
+                    style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}
+                  />
                 </View>
+              );
+            })}
+          </View>
+          <View style={styles.footerDiscription}>
+            <Text style={styles.footerTitle}>PKR 800-920</Text>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={{fontWeight: 'bold', color: '#868891'}}>Note: </Text>
+              <View style={{width: (width * 80) / 100}}>
+                <Text style={{color: '#868891'}}>
+                  This is an approximate estimate. Actual cost may be diffrent
+                  due to traffic and wating time
+                </Text>
               </View>
             </View>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <TouchableOpacity
-                style={[
-                  styles.footerButton,
-                  {borderRightWidth: 2, borderRightColor: '#f5f5f6'},
-                ]}
-                activeOpacity={1}>
-                <Text style={styles.buttonText1}>Cash</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[
-                  styles.footerButton,
-                  {borderLeftWidth: 2, borderLeftColor: '#f5f5f6'},
-                ]}
-                activeOpacity={1}>
-                <Text style={styles.buttonText2}>Pay</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.bookButtonWrapper}>
-              <TouchableOpacity
-                style={styles.bookButton}
-                activeOpacity={0.9}>
-                <Text style={styles.bookButtonText}>Book Now</Text>
-              </TouchableOpacity>
-            </View>
           </View>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <TouchableOpacity
+              style={[
+                styles.footerButton,
+                {borderRightWidth: 2, borderRightColor: '#f5f5f6'},
+              ]}
+              activeOpacity={1}>
+              <Text style={styles.buttonText1}>Cash</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.footerButton,
+                {borderLeftWidth: 2, borderLeftColor: '#f5f5f6'},
+              ]}
+              activeOpacity={1}>
+              <Text style={styles.buttonText2}>Pay</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.bookButtonWrapper}>
+            <TouchableOpacity style={styles.bookButton} activeOpacity={0.9}>
+              <Text style={styles.bookButtonText}>Book Now</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
         )}
       </View>
     </View>

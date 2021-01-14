@@ -28,48 +28,50 @@ const CustomIcon = createIconSetFromIcoMoon(
 
 const {width, height} = Dimensions.get('window');
 
-const Home = () => (
-  <View style={styles.container}>
-    <Map screenName="Home" />
-    <SafeAreaView style={styles.safeContainer}>
-      <View>
-        <Feather name="menu" size={24} style={{marginTop: 20}} />
-      </View>
-      <TouchableOpacity style={styles.search}>
-        <View style={styles.inputWrapper}>
-          <View style={styles.greenDot} />
-          <View>
-            <Text style={styles.inputText}>What your Location</Text>
-          </View>
-        </View>
+const Home = () => {
+  return (
+    <View style={styles.container}>
+      <Map screenName="Home" />
+      <SafeAreaView style={styles.safeContainer}>
         <View>
-          <Feather name="heart" size={20} style={{color: '#8b8d96'}} />
+          <Feather name="menu" size={24} style={{marginTop: 20}} />
         </View>
-      </TouchableOpacity>
-    </SafeAreaView>
-    <View style={styles.categoryWrapper}>
-      {data.map((item) => {
-        return (
-          <View key={item.id} style={styles.category}>
-            <Text style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}>
-              {item.name}
-            </Text>
-            <CustomIcon
-              style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}
-              name={item.icon}
-              size={45}
-            />
+        <TouchableOpacity style={styles.search}>
+          <View style={styles.inputWrapper}>
+            <View style={styles.greenDot} />
+            <View>
+              <Text style={styles.inputText}>What your Location</Text>
+            </View>
           </View>
-        );
-      })}
+          <View>
+            <Feather name="heart" size={20} style={{color: '#8b8d96'}} />
+          </View>
+        </TouchableOpacity>
+      </SafeAreaView>
+      <View style={styles.categoryWrapper}>
+        {data.map((item) => {
+          return (
+            <View key={item.id} style={styles.category}>
+              <Text style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}>
+                {item.name}
+              </Text>
+              <CustomIcon
+                style={{color: item.id === '1' ? '#5d5e6b' : '#c1c2c7'}}
+                name={item.icon}
+                size={45}
+              />
+            </View>
+          );
+        })}
+      </View>
+      <View style={styles.buttonWrapper}>
+        <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+          <Text style={styles.buttonText}>PickMe Here</Text>
+        </TouchableOpacity>
+      </View>
     </View>
-    <View style={styles.buttonWrapper}>
-      <TouchableOpacity style={styles.button} activeOpacity={0.7}>
-        <Text style={styles.buttonText}>PickMe Here</Text>
-      </TouchableOpacity>
-    </View>
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

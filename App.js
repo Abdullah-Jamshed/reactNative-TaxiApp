@@ -10,9 +10,9 @@ import MapView, {PROVIDER_GOOGLE, Marker, Circle} from 'react-native-maps';
 const App = () => {
   return (
     <View style={styles.container}>
-      {/* <Home /> */}
+      <Home />
       {/* <Search /> */}
-      <Book />
+      {/* <Book /> */}
     </View>
   );
 };
